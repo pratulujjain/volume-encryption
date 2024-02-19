@@ -1,0 +1,14 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: redis
+  namespace: flask
+  labels:
+    app: redis
+spec:
+  storageClassName: "longhorn-crypto-per-volume"
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 250Mi
